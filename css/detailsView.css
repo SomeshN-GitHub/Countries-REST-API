@@ -81,7 +81,7 @@
 
 /* responsive settings */
 
-@media (max-width:400px) {
+@media (max-width:600px) {
     #backBtn{
         margin-left: 2rem;
         width: 23%;
