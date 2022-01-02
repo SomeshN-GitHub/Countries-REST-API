@@ -19,7 +19,7 @@ async function getCountries(){
     // capital.innerText = `Capital: ${countries[84].capital}`;
     return countriesArray;
     }catch(error){
-        console.log(error);
+        console.log('error occure', error);
     }
     
 }
@@ -31,7 +31,9 @@ async function displayCountries(){
     let cardsContainer = document.getElementById('cardsContainer');
     let filterButton = document.getElementById('filterButton');
     countries.forEach((element, index) => {
-        cardsContainer.innerHTML += `
+        
+        setTimeout(() => {
+            cardsContainer.innerHTML += `
         <div class='card' id="${index}" onclick="showInDetail(this.id)">
                 <img class='cardCountryimg' src="${element.flag}" alt="Country image">
                 <div class="detailsInCard">
@@ -41,17 +43,17 @@ async function displayCountries(){
                     <p id="capital${index}">Capital: ${element.capital}</p>
                 </div>
             </div>
-            `;  
+            `; 
+        }, 50);
 
         // populate regions in dropdown filter button     
         if(!filterButton.innerHTML.includes(element.region)){    
         filterButton.innerHTML+=`<option value="${element.region}">${element.region}</option>`;
         }
     });  
-        document.getElementById('loadingIcon').style.display='none';
-    
-    
+        document.getElementById('loadingIcon').style.display='none';      
 }
+
 // search by country name 
 async function searchCountries(){
     let cardsArray = await document.getElementsByClassName('card');
@@ -181,6 +183,28 @@ function hideDetailsPage(){
 
 
 // dark mode 
+// function changeMode() {
+//     console.log('clicked');
+//     var body = document.body;
+//     body.classList.toggle("lightModeBody");
+
+//     let card = document.getElementsByClassName('card');
+//     Array.from(card).forEach(crd => {
+//         crd.classList.toggle('lightModeElements');
+//     })
+
+//     let srchbtn = document.querySelector('.search');
+// srchbtn.classList.toggle('lightModeElements');
+
+//     let main = document.getElementById('main');
+//     main.classList.toggle('lightModeBody');
+
+//     let flter = document.getElementById('filterButton');
+//     flter.classList.toggle('lightModeElements');
+
+//     let flter1 = document.getElementById('filter');
+//     flter1.classList.toggle('lightModeElements');
+// }
 
 function changeMode(){
     var rt = document.querySelector(':root');
