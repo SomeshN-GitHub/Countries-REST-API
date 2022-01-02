@@ -1,4 +1,4 @@
-@import 'myStyle.css';
+@import './css/myStyle.css';
 #detailViewContainer{
     margin-top: 2rem;
     width: 100%;
