@@ -199,9 +199,9 @@ function changeMode(){
         rt.style.setProperty('--Dark_Mode_Text', bgcolor.getPropertyValue('--Light_Mode_Text'));
         rt.style.setProperty('--Light_Mode_Text', temp);
 
-        if(document.getElementsByClassName('darkMode-btn')[0].innerHTML == '<img src="moon-outline.svg"> Light Mode'){
+        if(document.getElementsByClassName('darkMode-btn')[0].innerHTML.includes('Light Mode')){
             document.getElementsByClassName('darkMode-btn')[0].innerHTML = '<img src="moon-outline.svg"> Dark Mode';
-        }else{
+        }else {
             document.getElementsByClassName('darkMode-btn')[0].innerHTML = '<img src="moon-outline.svg"> Light Mode';
         }
     // console.log(bgcolor.getPropertyValue('--Dark_Mode_Background'));
