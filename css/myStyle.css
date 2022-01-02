@@ -254,5 +254,12 @@ select:active {
     margin-top: -1rem;
     align-items: center;
   }
+  .loader {
+    position: absolute;
+    left: 45%;
+    top: 48%;
+    width: 40px;
+    height: 40px;
+  }
   
 }
