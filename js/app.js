@@ -44,7 +44,7 @@ async function displayCountries(){
                 </div>
             </div>
             `; 
-        }, 100);
+        }, 10);
 
         // populate regions in dropdown filter button     
         if(!filterButton.innerHTML.includes(element.region)){    
