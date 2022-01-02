@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where in the World!</title>
+    <link rel="stylesheet" href="./css/myStyle.css">
+    <link rel="stylesheet" href="./css/detailsView.css">
+</head>
+<body>
+    <!-- Topmost bar -->
+    <div class="navBar">
+        <h2 class="logo">Where in the World?</h2>
+        <h4 class="darkMode-btn" onclick="changeMode()"> <img src="moon-outline.svg"></img> Light Mode</h4>
+    </div>
+
+    <!-- loading animation  -->
+    <div id="loadingIcon">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Search and filter bar -->
+    <section class="main" id="main" >
+        <div class="srchFilterBar">
+            <div class="search">
+                <i id="searchIcon"><b>Q</b></i>
+                <input type="text" id="searchText" onkeyup="searchCountries()" placeholder="Search for a country...">
+            </div>
+            <div class="filter" id="filter">
+                <select name="filterButton" id="filterButton" onchange='filterCountries()'>
+                    <option value="all">Filter by Region</option>                
+                </select>
+            </div>
+        </div>
+
+    <!-- main country cards container  -->
+        <div id="cardsContainer">
+            <!-- <div class="card">
+                <img id='img' src="" alt="Country image">
+                <div class="detailsInCard">
+                    <h3 id="countryName"></h3>
+                    <p id="population"></p>
+                    <p id="region"></p>
+                    <p id="capital"></p>
+                </div>
+            </div> -->        
+        </div>
+    </section>
+    <div id="detailViewContainer" >        
+            <!-- <div class="imageContainer"><img src="https://flagcdn.com/au.svg" alt="" class="countryImg"></div>
+            <div class="countryText">
+                <h2 id="name">Germany</h2>
+                <div class="textDetails">
+                    <div class="leftTextDetails">
+                        <p class="x">fghjafsgh</p>
+                        <p class="x">hjkjasghd</p>
+                        <p class="x">hjfghjkghhjk</p>
+                        <p class="x">wetrytuy</p>
+                        <p class="x">xrctvybhjn</p>
+                    </div>
+                    <div class="rightTextDetails">
+                        <p class="x">cvgbhjn</p>
+                        <p class="x">cvgbh</p>
+                        <p class="x">cgvhb</p>
+                    </div>
+                </div>
+                <div class="borderCountries">
+                    <p>Border Countries:</p>
+                    <button id="">America</button>
+                </div>
+            </div> -->
+        <!-- </div> -->
+    </div>
+    
+    <script src="./js/app.js"></script>
+</body>
+</html>
