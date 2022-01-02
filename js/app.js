@@ -36,7 +36,7 @@ async function displayCountries(){
                 <img class='cardCountryimg' src="${element.flag}" alt="Country image">
                 <div class="detailsInCard">
                     <h3 id="countryName${index}">${element.name}</h3>
-                    <p id="population${index}">Population: ${element.population}</p>
+                    <p id="population${index}">Population: ${Number(element.population).toLocaleString()}</p>
                     <p id="region${index}">Region: ${element.region}</p>
                     <p id="capital${index}">Capital: ${element.capital}</p>
                 </div>
