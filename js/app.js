@@ -30,9 +30,8 @@ async function displayCountries(){
     let countries = await getCountries();
     let cardsContainer = document.getElementById('cardsContainer');
     let filterButton = document.getElementById('filterButton');
-    Let tempText ='';
-countries.forEach((element, index) => {
-        tempText+= `
+    countries.forEach((element, index) => {
+        cardsContainer.innerHTML += `
         <div class='card' id="${index}" onclick="showInDetail(this.id)">
                 <img class='cardCountryimg' src="${element.flag}" alt="Country image">
                 <div class="detailsInCard">
@@ -49,12 +48,10 @@ countries.forEach((element, index) => {
         filterButton.innerHTML+=`<option value="${element.region}">${element.region}</option>`;
         }
     });  
-cardsContainer.innerHTML += tempText;
         document.getElementById('loadingIcon').style.display='none';
     
     
 }
-
 // search by country name 
 async function searchCountries(){
     let cardsArray = await document.getElementsByClassName('card');
