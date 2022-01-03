@@ -30,11 +30,13 @@ async function displayCountries(){
     let countries = await getCountries();
     let cardsContainer = document.getElementById('cardsContainer');
     let filterButton = document.getElementById('filterButton');
-    countries.forEach((element, index) => {
-        
-        setTimeout(() => {
-            cardsContainer.innerHTML += `
-        <div class='card' id="${index}" onclick="showInDetail(this.id)">
+    await countries.forEach((element, index) => {
+        var card = document.createElement('div');
+        card.className = 'card';
+        card.setAttribute('id',`${index}`);
+        card.setAttribute('onclick', "showInDetail(this.id)");
+
+        card.innerHTML += `
                 <img class='cardCountryimg' src="${element.flag}" alt="Country image">
                 <div class="detailsInCard">
                     <h3 id="countryName${index}">${element.name}</h3>
@@ -42,9 +44,8 @@ async function displayCountries(){
                     <p id="region${index}">Region: ${element.region}</p>
                     <p id="capital${index}">Capital: ${element.capital}</p>
                 </div>
-            </div>
             `; 
-        }, 10);
+        cardsContainer.appendChild(card);
 
         // populate regions in dropdown filter button     
         if(!filterButton.innerHTML.includes(element.region)){    
