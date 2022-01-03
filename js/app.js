@@ -1,29 +1,20 @@
 // document.write('hi');
 var countries =[];
 
+// getCountries(); fetch all the countries
 async function getCountries(){
     try{
            var response = await fetch('https://restcountries.com/v2/all');
         var countriesArray = await response.json();
         countries =  countriesArray;
         console.log(countriesArray[84]);
-    //     let cardimg = document.getElementById('img');
-    // let countryName = document.getElementById('countryName');
-    // let population = document.getElementById('population');
-    // let region = document.getElementById('region');
-    // let capital = document.getElementById('capital');
-    // cardimg.setAttribute('src',`${countries[84].flag}`);
-    // countryName.innerText = ` ${countries[84].name}`;
-    // population.innerText = `Population: ${countries[84].population }`;
-    // region.innerText = `Region: ${countries[84].region }`;
-    // capital.innerText = `Capital: ${countries[84].capital}`;
     return countriesArray;
     }catch(error){
         console.log('error occure', error);
     }
     
 }
-// getCountries();
+
 displayCountries();
 
 async function displayCountries(){
@@ -31,6 +22,7 @@ async function displayCountries(){
     let cardsContainer = document.getElementById('cardsContainer');
     let filterButton = document.getElementById('filterButton');
     await countries.forEach((element, index) => {
+        // create country card and append 
         var card = document.createElement('div');
         card.className = 'card';
         card.setAttribute('id',`${index}`);
@@ -54,6 +46,7 @@ async function displayCountries(){
     });  
         document.getElementById('loadingIcon').style.display='none';      
 }
+
 
 // search by country name 
 async function searchCountries(){
@@ -90,6 +83,8 @@ async function filterCountries(){
 })
 }
 
+
+// when click on perticular country, show details about that country on a new page 
 async function showInDetail(countryId){
     document.getElementById('main').style.display ='none';
     // let newPageContainer = document.getElementsByClassName('detailViewContainer');
@@ -168,7 +163,7 @@ if(currentContry.currencies != undefined){
                 </div>
             </div>
     `;
-    console.log(currentContry);
+    // console.log(currentContry);
 }
 
 
@@ -183,30 +178,7 @@ function hideDetailsPage(){
 }
 
 
-// dark mode 
-// function changeMode() {
-//     console.log('clicked');
-//     var body = document.body;
-//     body.classList.toggle("lightModeBody");
-
-//     let card = document.getElementsByClassName('card');
-//     Array.from(card).forEach(crd => {
-//         crd.classList.toggle('lightModeElements');
-//     })
-
-//     let srchbtn = document.querySelector('.search');
-// srchbtn.classList.toggle('lightModeElements');
-
-//     let main = document.getElementById('main');
-//     main.classList.toggle('lightModeBody');
-
-//     let flter = document.getElementById('filterButton');
-//     flter.classList.toggle('lightModeElements');
-
-//     let flter1 = document.getElementById('filter');
-//     flter1.classList.toggle('lightModeElements');
-// }
-
+// dark mode light mode setting 
 function changeMode(){
     var rt = document.querySelector(':root');
 
