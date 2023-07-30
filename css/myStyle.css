@@ -70,9 +70,9 @@ body {
   float: left;
 }
 .darkMode-btn {
-  cursor:pointer;
+    cursor: pointer;
 }
-.darkMode-btn img{
+.darkMode-btn > img{
   margin-right: 0.5rem;
 }
 /* Main section -> filter and search bar  */
