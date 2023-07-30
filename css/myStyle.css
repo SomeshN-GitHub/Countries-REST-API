@@ -69,7 +69,12 @@ body {
   width: 1.3rem;
   float: left;
 }
-
+.darkMode-btn {
+  cursor:pointer;
+}
+.darkMode-btn img{
+  margin-right: 0.5rem;
+}
 /* Main section -> filter and search bar  */
 .main {
   min-width: 100%;
